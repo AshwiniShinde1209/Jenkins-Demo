@@ -1,18 +1,16 @@
-name: My First Github Actions 
+name: Show Python Version
 
-on: [push]
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu
+  show-python-version:
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: 3.9
+      - name: Check out code
+        uses: actions/checkout@v4
 
-    - name: Check version
-      run: |
-        python --version
+      - name: Show Python version
+        run: python --version
