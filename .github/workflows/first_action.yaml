@@ -1,0 +1,18 @@
+name: My First Github Actions 
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.9
+
+    - name: Check version
+      run: |
+        python --version
