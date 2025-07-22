@@ -1,8 +1,6 @@
 name: Show Python Version
 
-on:
-  push:
-  workflow_dispatch:
+on: [push]
 
 jobs:
   show-python-version:
